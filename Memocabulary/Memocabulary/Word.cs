@@ -14,7 +14,7 @@ namespace Memocabulary
         public string ExampleSentence { get; set; } //opsionel
         public DateTime WillAskDateTime { get; set; }//default is today affter asking it will be update
 
-        bool WordBorned = false;
+        private bool WordBorned = false;
         Word()
         {
             if (WordBorned == false)

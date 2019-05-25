@@ -8,5 +8,7 @@ namespace Memocabulary
 {
     class WordList
     {
+        readonly List<Word> words = new List<Word>();
+
     }
 }

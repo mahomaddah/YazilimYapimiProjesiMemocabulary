@@ -49,6 +49,8 @@ namespace Memocabulary
                     {
                         Cikti[2] = wordsToArray[sik2 + 1];
                     }
+
+
                     else
                     {
                         Cikti[2] = wordsToArray[sik2];

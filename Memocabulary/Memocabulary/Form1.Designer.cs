@@ -36,6 +36,14 @@
             this.button4 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.labelEnglishWord = new System.Windows.Forms.Label();
+            this.labelKindOfWord = new System.Windows.Forms.Label();
+            this.labelOrnekCumle = new System.Windows.Forms.Label();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.radioButton4 = new System.Windows.Forms.RadioButton();
+            this.radioButton5 = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // comboBox1
@@ -113,11 +121,102 @@
             this.label2.TabIndex = 7;
             this.label2.Text = "Yeni Destenin Adı:";
             // 
+            // labelEnglishWord
+            // 
+            this.labelEnglishWord.AutoSize = true;
+            this.labelEnglishWord.Location = new System.Drawing.Point(79, 146);
+            this.labelEnglishWord.Name = "labelEnglishWord";
+            this.labelEnglishWord.Size = new System.Drawing.Size(41, 13);
+            this.labelEnglishWord.TabIndex = 8;
+            this.labelEnglishWord.Text = "English";
+            // 
+            // labelKindOfWord
+            // 
+            this.labelKindOfWord.AutoSize = true;
+            this.labelKindOfWord.Location = new System.Drawing.Point(193, 146);
+            this.labelKindOfWord.Name = "labelKindOfWord";
+            this.labelKindOfWord.Size = new System.Drawing.Size(31, 13);
+            this.labelKindOfWord.TabIndex = 9;
+            this.labelKindOfWord.Text = "Kind:";
+            // 
+            // labelOrnekCumle
+            // 
+            this.labelOrnekCumle.AutoSize = true;
+            this.labelOrnekCumle.Location = new System.Drawing.Point(287, 146);
+            this.labelOrnekCumle.Name = "labelOrnekCumle";
+            this.labelOrnekCumle.Size = new System.Drawing.Size(50, 13);
+            this.labelOrnekCumle.TabIndex = 10;
+            this.labelOrnekCumle.Text = "Exemple:";
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(82, 220);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(85, 17);
+            this.radioButton1.TabIndex = 16;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "radioButton1";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(237, 244);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(85, 17);
+            this.radioButton2.TabIndex = 17;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "radioButton2";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton3
+            // 
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.Location = new System.Drawing.Point(82, 278);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(85, 17);
+            this.radioButton3.TabIndex = 18;
+            this.radioButton3.TabStop = true;
+            this.radioButton3.Text = "radioButton3";
+            this.radioButton3.UseVisualStyleBackColor = true;
+            // 
+            // radioButton4
+            // 
+            this.radioButton4.AutoSize = true;
+            this.radioButton4.Location = new System.Drawing.Point(237, 302);
+            this.radioButton4.Name = "radioButton4";
+            this.radioButton4.Size = new System.Drawing.Size(85, 17);
+            this.radioButton4.TabIndex = 19;
+            this.radioButton4.TabStop = true;
+            this.radioButton4.Text = "radioButton4";
+            this.radioButton4.UseVisualStyleBackColor = true;
+            // 
+            // radioButton5
+            // 
+            this.radioButton5.AutoSize = true;
+            this.radioButton5.Location = new System.Drawing.Point(82, 334);
+            this.radioButton5.Name = "radioButton5";
+            this.radioButton5.Size = new System.Drawing.Size(85, 17);
+            this.radioButton5.TabIndex = 20;
+            this.radioButton5.TabStop = true;
+            this.radioButton5.Text = "radioButton5";
+            this.radioButton5.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(654, 480);
+            this.ClientSize = new System.Drawing.Size(654, 427);
+            this.Controls.Add(this.radioButton5);
+            this.Controls.Add(this.radioButton4);
+            this.Controls.Add(this.radioButton3);
+            this.Controls.Add(this.radioButton2);
+            this.Controls.Add(this.radioButton1);
+            this.Controls.Add(this.labelOrnekCumle);
+            this.Controls.Add(this.labelKindOfWord);
+            this.Controls.Add(this.labelEnglishWord);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button4);
@@ -128,6 +227,7 @@
             this.Controls.Add(this.comboBox1);
             this.Name = "Form1";
             this.Text = "MemoCabulary";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -143,6 +243,14 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label labelEnglishWord;
+        private System.Windows.Forms.Label labelKindOfWord;
+        private System.Windows.Forms.Label labelOrnekCumle;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.RadioButton radioButton4;
+        private System.Windows.Forms.RadioButton radioButton5;
     }
 }
 

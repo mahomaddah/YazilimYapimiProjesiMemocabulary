@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Memocabulary
 {
-    class Word
+   public class Word
     {
         public string EnlishName { get; set; }
         public string TurkishName { get; set; }

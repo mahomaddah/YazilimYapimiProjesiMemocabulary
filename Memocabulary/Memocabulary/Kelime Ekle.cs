@@ -50,10 +50,15 @@ namespace Memocabulary
             }
             else
             {
+                
                 wordList.KelimeEkle(temp);
                 MessageBox.Show("Kelimeniz eklendi...");                                              
                  singletone.desteninYerineKoy(wordList);
             }
+            textBoxEng.Text="";
+            textBoxTurk.Text="";
+            textBoxCumle.Text = "";
+            listBox1.SelectedIndex=-1;
         }
 
         private void Kelime_Ekle_Load(object sender, EventArgs e)

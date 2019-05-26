@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Memocabulary
 {
@@ -73,16 +74,16 @@ namespace Memocabulary
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
-
-
-
-            //Desteler = singletone.GetDeste();
             
             foreach (WordList w in singletone.GetDesteler()) {
                 if(w.Name!=null && comboBox1.Items.Contains(w.Name)==false)
                 comboBox1.Items.Add(w.Name); }
-            
+            System.Windows.Forms.MessageBox.Show("Değişiklikleriniz kayıdedildi.");
+            System.Xml.Serialization.XmlSerializer xmlser = new System.Xml.Serialization.XmlSerializer(typeof(List<WordList>));
+            //save codu
+            Stream stream = File.OpenWrite(Environment.CurrentDirectory + "\\Desteler.txt");
+            xmlser.Serialize(stream, singletone.GetDesteler());
+            stream.Close();
         }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)

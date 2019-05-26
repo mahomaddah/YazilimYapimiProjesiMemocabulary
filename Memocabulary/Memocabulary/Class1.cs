@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace Memocabulary
 {
@@ -20,7 +21,15 @@ namespace Memocabulary
             {
                 Desteler = new List<WordList>();
             }
-            
+            System.Xml.Serialization.XmlSerializer xmlser = new System.Xml.Serialization.XmlSerializer(typeof(List<WordList>));
+
+
+            //load kodu            
+            using (var doc = new StreamReader(Environment.CurrentDirectory + "\\Desteler.txt"))
+            {
+                Desteler = (List<WordList>)xmlser.Deserialize(doc);
+            }
+
         }
         public static Tone Instance()
         {

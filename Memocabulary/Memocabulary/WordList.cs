@@ -6,20 +6,21 @@ using System.Threading.Tasks;
 
 namespace Memocabulary
 {
-    class WordList
+    public class WordList
     {
+
         public string Name { get; set; }
         private List<Word> words = new List<Word>();
 
-        public void KelimeEkle(Word word)
+       public void KelimeEkle(Word word)
         {
             words.Add(word);
         }
-        public void KelimeSil(Word word)
+       public void KelimeSil(Word word)
         {
             words.Remove(word);
         }
-        public Word[] KelimeSor()
+         Word[] KelimeSor()
         {
             Word[] wordsToArray = new Word[words.Capacity];
             Random random = new Random();

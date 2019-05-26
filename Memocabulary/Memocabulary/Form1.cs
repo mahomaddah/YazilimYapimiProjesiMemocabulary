@@ -14,8 +14,11 @@ namespace Memocabulary
 
     public partial class Form1 : Form
     {
-        Tone singletone;
-        List<WordList> Desteler = null;
+        // Tone singletone;
+        //List<WordList> Desteler;
+        Tone singletone = Tone.Instance();
+       // List<WordList> Desteler = new List<WordList>();
+        
         public Form1()
         {
             InitializeComponent();
@@ -29,11 +32,13 @@ namespace Memocabulary
                 MessageBox.Show("Lütfen aşağıdaki alandan yeni desteniz için yeni bir isim seçip sonra tekrar deneyiniz...");
             else
             {
-                tempDeste.Name = textBox1.Text.ToLower();
-                Desteler.Add(tempDeste);
+               // Desteler = singletone.GetDeste();
+                tempDeste.Name = textBox1.Text.ToLower();               
+                singletone.DesteEkle(tempDeste);
                // Desteler = new List<WordList>();
-                foreach (WordList w in Desteler)
+                foreach (WordList w in singletone.GetDesteler())
                 {
+                    if(w.Name!=null && comboBox1.Items.Contains(w.Name) == false)
                     comboBox1.Items.Add(w.Name);
                 }
             }                    
@@ -68,9 +73,14 @@ namespace Memocabulary
 
         private void Form1_Load(object sender, EventArgs e)
         {
-             singletone = Tone.Instance();
-            Desteler = new List<WordList>();
-            foreach(WordList w in Desteler) {
+
+
+
+
+            //Desteler = singletone.GetDeste();
+            
+            foreach (WordList w in singletone.GetDesteler()) {
+                if(w.Name!=null && comboBox1.Items.Contains(w.Name)==false)
                 comboBox1.Items.Add(w.Name); }
             
         }

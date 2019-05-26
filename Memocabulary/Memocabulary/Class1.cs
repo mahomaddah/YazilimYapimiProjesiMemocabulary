@@ -24,6 +24,7 @@ namespace Memocabulary
         }
         public static Tone Instance()
         {
+
             if (instance == null)
             {
                 instance = new Tone();
@@ -39,14 +40,14 @@ namespace Memocabulary
         {
             return Desteler.Find(a => a.Name.Contains(ad));
         }
-        public List<WordList> GetDeste()
+        public List<WordList> GetDesteler()
         {
-            return Desteler;
+               return Desteler;
         }
-        public void desteninYerineKoy(string ad, WordList Koy)
+        public void desteninYerineKoy( WordList Koy)
         {
-            Desteler.Remove(Desteler.Find(a => a.Name.Contains(ad)));
-            Desteler.Add(Koy);
+            Desteler.Remove(Koy);//Desteler.Find(a => a.Name.Contains(ad)));
+            Desteler.Add(Koy);                         
         }
 
     }

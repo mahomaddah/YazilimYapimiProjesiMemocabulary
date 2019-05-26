@@ -13,7 +13,7 @@ namespace Memocabulary
     public partial class Kelime_Ekle : Form
     {
         Tone singletone;
-        List<WordList> Desteler = null;
+       // List<WordList> Desteler = null;
         private WordList wordList;
         private string desteismi="";
 
@@ -51,21 +51,15 @@ namespace Memocabulary
             else
             {
                 wordList.KelimeEkle(temp);
-                MessageBox.Show("Kelimeniz eklendi...");
-               
-                Desteler.Remove(Desteler.Find(a => a.Name.Contains(desteismi)));
-                Desteler.Add(wordList);
-                //  singletone.desteninYerineKoy(desteismi, wordList);
+                MessageBox.Show("Kelimeniz eklendi...");                                              
+                 singletone.desteninYerineKoy(wordList);
             }
         }
 
         private void Kelime_Ekle_Load(object sender, EventArgs e)
         {
             wordList = new WordList();
-            singletone = Tone.Instance();
-            Desteler = new List<WordList>();
-            
-            
+            singletone = Tone.Instance();                                             
         }
 
         private void button2_Click(object sender, EventArgs e)

@@ -8,7 +8,8 @@ namespace Memocabulary
 {
     class WordList
     {
-        readonly List<Word> words = new List<Word>();
+        public string Name { get; set; }
+        private List<Word> words = new List<Word>();
 
         public void KelimeEkle(Word word)
         {

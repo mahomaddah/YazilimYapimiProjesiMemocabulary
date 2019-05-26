@@ -13,8 +13,8 @@ namespace Memocabulary
     public partial class Kelime_Ekle : Form
     {
         Tone singletone;
-        private WordList wordList = null;
-        
+        private WordList wordList;
+        private string desteismi="";
 
         public Kelime_Ekle()
         {
@@ -24,6 +24,8 @@ namespace Memocabulary
         
         public void DesteIsminiAl(string DesteIsmi)
         {
+            singletone = Tone.Instance();
+            desteismi = DesteIsmi;
             //deste ismindan deste ulasicaz 
             wordList = singletone.GetDesteByName(DesteIsmi);
 
@@ -31,12 +33,30 @@ namespace Memocabulary
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            Word temp = new Word();
+            temp.EnlishName = "";
+            temp.TurkishName = "";
+            temp.WordKind = "";
+            temp.EnlishName = textBoxEng.Text;
+            temp.TurkishName = textBoxTurk.Text;
+            temp.ExampleSentence = textBoxCumle.Text;
+            temp.WordKind = listBox1.SelectedIndex.ToString();
+            if (temp.EnlishName == "" || temp.TurkishName == "" || temp.WordKind == "")
+            {
+                MessageBox.Show("Lütfen ingilizce ismi ve türkçe çevirisi ve kelime çeşiti seçeneklerini doğru doldurduğunuzdan emin olun");
+            }
+            else
+            {
+                wordList.KelimeEkle(temp);
+                MessageBox.Show("Kelimeniz eklendi...");
+                singletone.desteninYerineKoy(desteismi, wordList);
+            }
         }
 
         private void Kelime_Ekle_Load(object sender, EventArgs e)
         {
-             singletone = Tone.Instance();
+            wordList = new WordList();
+            singletone = Tone.Instance();
             
         }
     }

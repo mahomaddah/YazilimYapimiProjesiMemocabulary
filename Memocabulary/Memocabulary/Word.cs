@@ -15,7 +15,7 @@ namespace Memocabulary
         public DateTime WillAskDateTime { get; set; }//default is today affter asking it will be update
 
         private bool WordBorned = false;
-        Word()
+        public Word()
         {
             if (WordBorned == false)
             {

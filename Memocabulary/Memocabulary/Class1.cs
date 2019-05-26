@@ -39,9 +39,14 @@ namespace Memocabulary
         {
             return Desteler.Find(a => a.Name.Contains(ad));
         }
-        public List<WordList> GetHotels()
+        public List<WordList> GetDeste()
         {
             return Desteler;
+        }
+        public void desteninYerineKoy(string ad, WordList Koy)
+        {
+            Desteler.Remove(Desteler.Find(a => a.Name.Contains(ad)));
+            Desteler.Add(Koy);
         }
 
     }

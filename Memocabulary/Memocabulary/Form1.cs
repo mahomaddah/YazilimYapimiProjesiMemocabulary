@@ -47,12 +47,18 @@ namespace Memocabulary
         }
 
         private void button2_Click(object sender, EventArgs e)
-        {                               
-            this.Hide();  
-            Kelime_Ekle k = new Kelime_Ekle();
-            k.DesteIsminiAl(comboBox1.SelectedIndex.ToString());
-            k.ShowDialog();
-           
+
+        {    if (comboBox1.SelectedItem==null)
+            {
+                MessageBox.Show("Her hangi bir deste seçmediniz. hiç yoksa yeni birtane oluşturabilirsiniz.");
+            }
+            else
+            {
+                this.Hide();
+                Kelime_Ekle k = new Kelime_Ekle();
+                k.DesteIsminiAl(comboBox1.Text.ToString());
+                k.ShowDialog();
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)

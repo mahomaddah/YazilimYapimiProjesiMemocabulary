@@ -60,9 +60,9 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(382, 274);
+            this.button2.Location = new System.Drawing.Point(104, 313);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(220, 23);
+            this.button2.Size = new System.Drawing.Size(234, 23);
             this.button2.TabIndex = 5;
             this.button2.Text = "Aylık İstatistik Göster";
             this.button2.UseVisualStyleBackColor = true;

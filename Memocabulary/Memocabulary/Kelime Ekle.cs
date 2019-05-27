@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Memocabulary
 {
@@ -54,6 +55,11 @@ namespace Memocabulary
                
                 MessageBox.Show("Kelimeniz eklendi...");                                              
                  singletone.GetDesteByName(desteismi).KelimeEkle(temp);
+                //save codu
+                System.Xml.Serialization.XmlSerializer xmlser = new System.Xml.Serialization.XmlSerializer(typeof(List<WordList>));
+                Stream stream = File.OpenWrite(Environment.CurrentDirectory + "\\Desteler.txt");
+                xmlser.Serialize(stream, singletone.GetDesteler());
+                stream.Close();
             }
             textBoxEng.Text="";
             textBoxTurk.Text="";
@@ -64,7 +70,9 @@ namespace Memocabulary
         private void Kelime_Ekle_Load(object sender, EventArgs e)
         {
             wordList = new WordList();
-            singletone = Tone.Instance();                                             
+            singletone = Tone.Instance();          
+            
+            
         }
 
         private void button2_Click(object sender, EventArgs e)

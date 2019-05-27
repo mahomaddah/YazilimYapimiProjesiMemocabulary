@@ -33,16 +33,42 @@ namespace Memocabulary
             }
             return b;
         }
+        private int[] RasgeleSirala22(int cap)
+        {
+            int[] Cikti = new int[cap];
+            Random r = new Random();
+            Cikti[0] = r.Next(0, cap);
+            do
+            {
+                Cikti[1] = r.Next(0, cap);
+            }
+            while (Cikti[0] == Cikti[1]);
+            do
+            {
+                Cikti[2] = r.Next(0, cap);
+            }
+            while (Cikti[0] == Cikti[2] || Cikti[1] == Cikti[2]);
+            do
+            {
+                Cikti[3] = r.Next(0, cap);
+            }
+            while (Cikti[0] == Cikti[3] || Cikti[1] == Cikti[3] || Cikti[2] == Cikti[3]);
+            
+
+            return Cikti;
+
+        }
+
+
         public Word[] KelimeSor()
         {
             Word[] wordsToArray = new Word[words.Capacity];
-            Random random = new Random();
-            if (words.Capacity < 6) { System.Windows.Forms.MessageBox.Show("Listenizde en az 6 kelime bulunmalı. lütfen kelime ekleyin.");return null; }
-            int sik1 = random.Next(3, words.Capacity)- 2;
-            int sik2 = random.Next(3, words.Capacity)- 2;
-            int sik3 = random.Next(3, words.Capacity)- 2;
-            int sik4 = random.Next(3, words.Capacity)- 2;
             
+            if (words.Capacity < 6) { System.Windows.Forms.MessageBox.Show("Listenizde en az 6 kelime bulunmalı. lütfen kelime ekleyin.");return null; }
+            //   int sik1 = random.Next(3, words.Capacity)- 2;
+            int[] r = new int[4];
+            r = RasgeleSirala22(words.Capacity);
+            //System.Windows.Forms.MessageBox.Show(sik1 + "\n"+ sik2 + "\n" + sik3 + "\n" + sik4 + "\nrandom");
             Word[] Cikti = new Word[5];
             //0 index dogru gerisi yanlis secenekler 
             foreach(Word Kelime in words)
@@ -52,47 +78,27 @@ namespace Memocabulary
                     Cikti[0] = Kelime;
                     //sorulacak kelime
                     //siklarin soru ile denkgelmeme kontorlu
-                    if (wordsToArray[sik1] == Kelime)
-                    {
-                        Cikti[1] = wordsToArray[sik1+1];
-                    }
-                    else
-                    {
-                        Cikti[1] = wordsToArray[sik1];
-                    }
+                    for(int i = 1; i < 5; i++)
+                    {/*
+                        if (wordsToArray[r[i]] == Kelime) //denk gelmeme durumu
+                        {
+                            if(r[i]==words.Capacity)
+                            Cikti[i] = wordsToArray[r[i]-1];
+                            else { Cikti[i] = wordsToArray[r[i]+1]; }
+                        }
+                        
+                        else
+                        {
+                            Cikti[i] = wordsToArray[r[i]];
+                        }*/
+                        Cikti[i] = wordsToArray[r[i]];
+                    }                   
+                                   
+                    
 
-                    if (wordsToArray[sik2] == Kelime)
-                    {
-                        Cikti[2] = wordsToArray[sik2 + 1];
-                    }
-
-
-                    else
-                    {
-                        Cikti[2] = wordsToArray[sik2];
-                    }
-
-                    if (wordsToArray[sik3] == Kelime)
-                    {
-                        Cikti[3] = wordsToArray[sik3 + 1];
-                    }
-                    else
-                    {
-                        Cikti[3] = wordsToArray[sik3];
-                    }
-
-                    if (wordsToArray[sik4] == Kelime)
-                    {
-                        Cikti[4] = wordsToArray[sik4 + 1];
-                    }
-                    else
-                    {
-                        Cikti[4] = wordsToArray[sik4];
-                    }                
-                    return Cikti;
                 }
             }
-            return null;//if null ise messagebox ta tebrik soyle kelime destesini bitirmis
+            //return null;//if null ise messagebox ta tebrik soyle kelime destesini bitirmis
         }
 
 

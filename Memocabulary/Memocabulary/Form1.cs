@@ -92,7 +92,7 @@ namespace Memocabulary
                 int[] rastgele = new int[5];
                 //Word[] Siklar = new Word[5];
                 WordList SoruListesi = new WordList();                
-                rastgele = RasgeleSirala();
+                rastgele = RasgeleSirala2();
                 Word[] Siklar = new Word[5];
                 if (singletone.GetDesteByName(comboBox1.Text.ToString()).KelimeSor() == null) { MessageBox.Show("Tebrikler!!! bu desteyi şimdilik tamamladınız..."); }
                 else
@@ -101,6 +101,8 @@ namespace Memocabulary
                     labelEnglishWord.Text = "English: " + Siklar[0].EnlishName;
                     labelKindOfWord.Text = "Kind: " + Siklar[0].WordKind;
                     labelOrnekCumle.Text = "Exemple: " + Siklar[0].ExampleSentence;
+                    //test kodu
+                 //   MessageBox.Show(rastgele[0] + "\n" + rastgele[1] + "\n" + rastgele[2] + "\n" + rastgele[3] + "\n" + rastgele[4] + "\n");
                     radioButton1.Text = Siklar[rastgele[0]].TurkishName;
                     radioButton2.Text = Siklar[rastgele[1]].TurkishName;
                     radioButton3.Text = Siklar[rastgele[2]].TurkishName;
@@ -146,17 +148,43 @@ namespace Memocabulary
             foreach (WordList w in singletone.GetDesteler()) {
                 if(w.Name!=null && comboBox1.Items.Contains(w.Name)==false)
                 comboBox1.Items.Add(w.Name); }
-            System.Windows.Forms.MessageBox.Show("Değişiklikleriniz kayıdedildi.");
-            System.Xml.Serialization.XmlSerializer xmlser = new System.Xml.Serialization.XmlSerializer(typeof(List<WordList>));
-            //save codu
-            Stream stream = File.OpenWrite(Environment.CurrentDirectory + "\\Desteler.txt");
-            xmlser.Serialize(stream, singletone.GetDesteler());
-            stream.Close();
-        }
 
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
-        {
-
+            Word temp = new Word();
+            temp.EnlishName = "hammer";
+            temp.TurkishName = "çekiç";
+            temp.WordKind = "Noun";
+            temp.ExampleSentence = "Use a hammer and nail set to drive them below the surface.";
+            Word temp2 = new Word();
+            temp2.EnlishName = "mamer";
+            temp2.TurkishName = "samer";
+            temp2.WordKind = "Noun";
+            temp2.ExampleSentence = "Use a hammer and nail set to drive them below the surface.";
+            Word temp3 = new Word();
+            temp3.EnlishName = "lammer";
+            temp3.TurkishName = "ekiç";
+            temp3.WordKind = "Noun";
+            temp3.ExampleSentence = "Use a hammer and nail set to drive them below the surface.";
+            Word temp4 = new Word();
+            temp4.EnlishName = "mer";
+            temp4.TurkishName = "sameldr";
+            temp4.WordKind = "Noun";
+            temp4.ExampleSentence = "Use a hammer and nail set to drive them below the surface.";
+            Word temp5 = new Word();
+            temp5.EnlishName = "hammder";
+            temp5.TurkishName = "çeksdiç";
+            temp5.WordKind = "Noun";
+            temp5.ExampleSentence = "Use a hammer and nail set to drive them below the surface.";
+            Word temp6 = new Word();
+            temp6.EnlishName = "malmker";
+            temp6.TurkishName = "samkjer";
+            temp6.WordKind = "Noun";
+            temp6.ExampleSentence = "Use a hammer and nail set to drive them below the surface.";
+            singletone.GetDesteByName("tools").KelimeEkle(temp);
+            singletone.GetDesteByName("tools").KelimeEkle(temp2);
+            singletone.GetDesteByName("tools").KelimeEkle(temp3);
+            singletone.GetDesteByName("tools").KelimeEkle(temp4);
+            singletone.GetDesteByName("tools").KelimeEkle(temp5);
+            singletone.GetDesteByName("tools").KelimeEkle(temp6);
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -178,7 +206,7 @@ namespace Memocabulary
             }
             int[] Cikti = new int[6];
          
-            foreach (int j in vitrin)
+            for (int j=0;j<5;j++)
             {
                 if (j!= 0)
                 {
@@ -201,6 +229,35 @@ namespace Memocabulary
             return Cikti;
 
         }
+        private int[] RasgeleSirala2()
+        {
+            int[] Cikti = new int[5];
+            Random r = new Random();
+            Cikti[0] = r.Next(0, 5);
+            do
+            {
+                Cikti[1] = r.Next(0, 5);
+            }
+            while (Cikti[0] == Cikti[1]);
+            do
+            {
+                Cikti[2] = r.Next(0, 5);
+            }
+            while (Cikti[0] == Cikti[2]|| Cikti[1] == Cikti[2]);
+            do
+            {
+                Cikti[3] = r.Next(0, 5);
+            }
+            while (Cikti[0] == Cikti[3] || Cikti[1] == Cikti[3]|| Cikti[2] == Cikti[3]);
+            do
+            {
+                Cikti[4] = r.Next(0, 5);
+            }
+            while (Cikti[0] == Cikti[4] || Cikti[1] == Cikti[4] || Cikti[2] == Cikti[4] || Cikti[4] == Cikti[3]);
+
+            return Cikti;
+
+        }
 
         private void button6_Click(object sender, EventArgs e)
         {
@@ -209,6 +266,16 @@ namespace Memocabulary
                 MessageBox.Show("Her hangi bir deste seçmediniz.");
             }else
             MessageBox.Show(singletone.GetDesteByName(comboBox1.SelectedItem.ToString()).KelimeleriSirala());
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            System.Windows.Forms.MessageBox.Show("Değişiklikleriniz kayıdedildi.");
+            System.Xml.Serialization.XmlSerializer xmlser = new System.Xml.Serialization.XmlSerializer(typeof(List<WordList>));
+            //save codu
+            Stream stream = File.OpenWrite(Environment.CurrentDirectory + "\\Desteler.txt");
+            xmlser.Serialize(stream, singletone.GetDesteler());
+            stream.Close();
         }
     }
 }

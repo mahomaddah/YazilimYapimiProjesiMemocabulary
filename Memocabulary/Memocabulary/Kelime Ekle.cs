@@ -51,9 +51,9 @@ namespace Memocabulary
             else
             {
                 
-                wordList.KelimeEkle(temp);
+               
                 MessageBox.Show("Kelimeniz eklendi...");                                              
-                 singletone.desteninYerineKoy(wordList);
+                 singletone.GetDesteByName(desteismi).KelimeEkle(temp);
             }
             textBoxEng.Text="";
             textBoxTurk.Text="";

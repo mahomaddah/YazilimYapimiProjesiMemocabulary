@@ -51,6 +51,7 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.button6 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -137,27 +138,30 @@
             this.labelEnglishWord.AutoSize = true;
             this.labelEnglishWord.Location = new System.Drawing.Point(51, 131);
             this.labelEnglishWord.Name = "labelEnglishWord";
-            this.labelEnglishWord.Size = new System.Drawing.Size(41, 13);
+            this.labelEnglishWord.Size = new System.Drawing.Size(47, 13);
             this.labelEnglishWord.TabIndex = 8;
-            this.labelEnglishWord.Text = "English";
+            this.labelEnglishWord.Text = "English: ";
+            this.labelEnglishWord.Visible = false;
             // 
             // labelKindOfWord
             // 
             this.labelKindOfWord.AutoSize = true;
             this.labelKindOfWord.Location = new System.Drawing.Point(165, 131);
             this.labelKindOfWord.Name = "labelKindOfWord";
-            this.labelKindOfWord.Size = new System.Drawing.Size(31, 13);
+            this.labelKindOfWord.Size = new System.Drawing.Size(34, 13);
             this.labelKindOfWord.TabIndex = 9;
-            this.labelKindOfWord.Text = "Kind:";
+            this.labelKindOfWord.Text = "Kind: ";
+            this.labelKindOfWord.Visible = false;
             // 
             // labelOrnekCumle
             // 
             this.labelOrnekCumle.AutoSize = true;
             this.labelOrnekCumle.Location = new System.Drawing.Point(259, 131);
             this.labelOrnekCumle.Name = "labelOrnekCumle";
-            this.labelOrnekCumle.Size = new System.Drawing.Size(50, 13);
+            this.labelOrnekCumle.Size = new System.Drawing.Size(53, 13);
             this.labelOrnekCumle.TabIndex = 10;
-            this.labelOrnekCumle.Text = "Exemple:";
+            this.labelOrnekCumle.Text = "Exemple: ";
+            this.labelOrnekCumle.Visible = false;
             // 
             // radioButton1
             // 
@@ -169,6 +173,7 @@
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "radioButton1";
             this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.Visible = false;
             this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // radioButton2
@@ -181,6 +186,7 @@
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "radioButton2";
             this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.Visible = false;
             // 
             // radioButton3
             // 
@@ -192,6 +198,7 @@
             this.radioButton3.TabStop = true;
             this.radioButton3.Text = "radioButton3";
             this.radioButton3.UseVisualStyleBackColor = true;
+            this.radioButton3.Visible = false;
             // 
             // radioButton4
             // 
@@ -203,6 +210,7 @@
             this.radioButton4.TabStop = true;
             this.radioButton4.Text = "radioButton4";
             this.radioButton4.UseVisualStyleBackColor = true;
+            this.radioButton4.Visible = false;
             // 
             // radioButton5
             // 
@@ -214,15 +222,17 @@
             this.radioButton5.TabStop = true;
             this.radioButton5.Text = "radioButton5";
             this.radioButton5.UseVisualStyleBackColor = true;
+            this.radioButton5.Visible = false;
             // 
             // Sonuc
             // 
             this.Sonuc.AutoSize = true;
             this.Sonuc.Location = new System.Drawing.Point(137, 389);
             this.Sonuc.Name = "Sonuc";
-            this.Sonuc.Size = new System.Drawing.Size(44, 13);
+            this.Sonuc.Size = new System.Drawing.Size(47, 13);
             this.Sonuc.TabIndex = 22;
-            this.Sonuc.Text = "Sonuc :";
+            this.Sonuc.Text = "Sonuc : ";
+            this.Sonuc.Visible = false;
             // 
             // button5
             // 
@@ -232,6 +242,7 @@
             this.button5.TabIndex = 23;
             this.button5.Text = "Bir tane daha sor";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Visible = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // pictureBox2
@@ -279,11 +290,22 @@
             this.pictureBox5.TabIndex = 28;
             this.pictureBox5.TabStop = false;
             // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(-1, 12);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(12, 23);
+            this.button6.TabIndex = 29;
+            this.button6.Text = "#";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(683, 481);
+            this.Controls.Add(this.button6);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox3);
@@ -345,6 +367,7 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.Button button6;
     }
 }
 

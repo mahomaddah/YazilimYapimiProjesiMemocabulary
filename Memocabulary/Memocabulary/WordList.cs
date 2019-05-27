@@ -20,16 +20,25 @@ namespace Memocabulary
         {
             words.Remove(word);
         }
-         Word[] KelimeSor()
+        public Word GetWordByName(string ad)
+        {
+            return words.Find(a => a.EnlishName.Contains(ad));
+        }
+        public List<Word> KelimeleriSirala()
+        {
+            return words;
+        }
+        public Word[] KelimeSor()
         {
             Word[] wordsToArray = new Word[words.Capacity];
             Random random = new Random();
-            int sik1 = random.Next(words.Capacity - 2);
-            int sik2 = random.Next(words.Capacity - 2);
-            int sik3 = random.Next(words.Capacity - 2);
-            int sik4 = random.Next(words.Capacity - 2);
+            if (words.Capacity < 6) { System.Windows.Forms.MessageBox.Show("Listenizde en az 6 kelime bulunmalı. lütfen kelime ekleyin.");return null; }
+            int sik1 = random.Next(3, words.Capacity)- 2;
+            int sik2 = random.Next(3, words.Capacity)- 2;
+            int sik3 = random.Next(3, words.Capacity)- 2;
+            int sik4 = random.Next(3, words.Capacity)- 2;
             
-            Word[] Cikti = new Word[4];
+            Word[] Cikti = new Word[5];
             //0 index dogru gerisi yanlis secenekler 
             foreach(Word Kelime in words)
             {

@@ -207,9 +207,8 @@ namespace Memocabulary
             if (comboBox1.SelectedItem == null)
             {
                 MessageBox.Show("Her hangi bir deste seçmediniz.");
-            }
-            singletone.GetDesteByName(comboBox1.SelectedItem.ToString()).
-            
+            }else
+            MessageBox.Show(singletone.GetDesteByName(comboBox1.SelectedItem.ToString()).KelimeleriSirala());
         }
     }
 }

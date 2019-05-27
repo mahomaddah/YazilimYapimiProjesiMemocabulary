@@ -10,7 +10,7 @@ namespace Memocabulary
     {
 
         public string Name { get; set; }
-        private List<Word> words = new List<Word>();
+        List<Word> words = new List<Word>();
 
        public void KelimeEkle(Word word)
         {
@@ -24,9 +24,14 @@ namespace Memocabulary
         {
             return words.Find(a => a.EnlishName.Contains(ad));
         }
-        public List<Word> KelimeleriSirala()
+        public string KelimeleriSirala()
         {
-            return words;
+            string b = "";
+            foreach (Word i in this.words)
+            {
+                b += i.EnlishName + "\n";
+            }
+            return b;
         }
         public Word[] KelimeSor()
         {

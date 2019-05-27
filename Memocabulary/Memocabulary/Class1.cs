@@ -27,6 +27,7 @@ namespace Memocabulary
             //load kodu            
             using (var doc = new StreamReader(Environment.CurrentDirectory + "\\Desteler.txt"))
             {
+                
                 Desteler = (List<WordList>)xmlser.Deserialize(doc);
             }
 

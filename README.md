@@ -1,6 +1,18 @@
 # YazilimYapimiProjesiMemocabulary
+NOT: "Issue-3-kelime-ekle-backend-yapicam"
+ is the most updated brunch;
 Memocabulary is a Windows form app programed in c# which you can add new word list and let program help you to memorize them. i'ts working with English and Turkish.
 
+ScreenShots:
+![](1.png)
+![](2.png)
+![](3.png)
+![](4.png)
+![](5.png)
+![](6.png)
+![](7.png)
+![](8.png)
+![](9.png)
 some of the requesments: 
 
 Projemiz bir kelime ezberleme programı
